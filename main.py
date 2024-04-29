@@ -10,7 +10,7 @@ st.header('Simple Time and Compound Time Translation Quiz')
 def display_question(question_data):
     st.write(question_data['question'])
     st.image("static/cropped_score_question_melody.png", caption='Question')
-    st.divider()
+    #st.divider()
     # Display options as images
     for idx, option in enumerate(question_data['options']):
         st.image(f"static/cropped_score_wr_option_{idx}.png", caption=f'Option {idx + 1}')
