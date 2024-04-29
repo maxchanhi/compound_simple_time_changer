@@ -17,7 +17,7 @@ def display_question(question_data):
 
     # Radio button for options
     option_selected = st.radio("Choose the correct option:", 
-                               options=[f'Option {i + 1}' for i in range(len(question_data['options']))],horizontal=True)
+                               options=[f'Option {i + 1}' for i in range(len(question_data['options']))])
 
     if st.button("Submit Answer"):
         for idx in range(len(question_data["options"])):
