@@ -22,7 +22,7 @@ def display_question(question_data):
         col2.markdown(f"Option {idx + 1}")
 
     option_selected = st.radio("Choose the correct option:", 
-                               options=[f'Option {i + 1}' for i in range(len(question_data['options']))],horizontal=True)
+                               options=[f'Option {i + 1}' for i in range(len(question_data['options']))])
 
     if st.button("Submit Answer"):
         correct_idx = None
