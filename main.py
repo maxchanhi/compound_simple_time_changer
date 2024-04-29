@@ -1,11 +1,12 @@
-#question_data = main_generate()
-#score_generation(question_data)
+
 from melody import main_generate
-#from score_gen import score_generation
 import asyncio
 from asynchronous import score_generation
 import streamlit as st
 
+st.set_page_config(
+    page_title="Simple Compound Time Translation Quiz")
+st.header('Simple Time and Compound Time Translation Quiz', divider='grey')
 def display_question(question_data):
     st.subheader(question_data['question'])
     # This assumes you have a function to generate images from musical notation
