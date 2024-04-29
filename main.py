@@ -12,7 +12,7 @@ st.set_page_config(
 def display_question(question_data):
     st.write(question_data['question'])
     st.image("static/cropped_score_question_melody.png", caption='Question')
-    #st.divider()
+    """____________________________________"""
     # Display options as images
     for idx, option in enumerate(question_data['options']):
         container = st.container()
