@@ -9,7 +9,6 @@ st.set_page_config(
 st.header('Simple Time and Compound Time Translation Quiz', divider='grey')
 def display_question(question_data):
     st.subheader(question_data['question'])
-    # This assumes you have a function to generate images from musical notation
     st.image("static/cropped_score_question_melody.png", caption='Question')
     st.divider()
     # Display options as images
@@ -32,8 +31,6 @@ def display_question(question_data):
 
 if __name__ == "__main__":
     st.title("Compound-simple-time Modulation Quiz")
-
-    # Using session state to hold the question data
     if 'question_data' not in st.session_state:
         
         st.session_state.question_data = main_generate()
