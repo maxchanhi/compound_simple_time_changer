@@ -8,7 +8,7 @@ st.set_page_config(
     page_title="Simple Compound Time Translation Quiz")
 st.header('Simple Time and Compound Time Translation Quiz')
 def display_question(question_data):
-    st.subheader(question_data['question'])
+    st.write(question_data['question'])
     st.image("static/cropped_score_question_melody.png", caption='Question')
     st.divider()
     # Display options as images
