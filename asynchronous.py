@@ -43,8 +43,8 @@ async def lilypond_generation(melody, name, uppertime, lowertime):
     with Image.open(f'temp/score_{name}.png') as img:
         width, height = img.size
         crop_height = height
-        upper = 75
-        lower = height - 75
+        upper = 0
+        lower = height - 100
         crop_rectangle = (0, upper, width, lower)
         cropped_img = img.crop(crop_rectangle)
 
