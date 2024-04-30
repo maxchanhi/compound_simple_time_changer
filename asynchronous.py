@@ -5,7 +5,7 @@ import os
 from score_gen import format_melody
 async def lilypond_generation(melody, name, uppertime, lowertime):
     lilypond_score = f"""
-\\version "2.22.0"  
+\\version "2.24.1"  
 \\header {{
   tagline = "" \\language "english"
 }}
@@ -43,9 +43,7 @@ async def lilypond_generation(melody, name, uppertime, lowertime):
     with Image.open(f'temp/score_{name}.png') as img:
         width, height = img.size
         crop_height = height
-        upper = 0
-        lower = 300
-        crop_rectangle = (0, upper, width, lower)
+        crop_rectangle = (0, 75, width, crop_height / 10)
         cropped_img = img.crop(crop_rectangle)
 
         os.makedirs('static', exist_ok=True)
