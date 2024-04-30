@@ -1,4 +1,4 @@
 build-essential
 pkg-config
-pkg-upgrade
-lilypond=2.24.3
+
+lilypond
