@@ -36,20 +36,9 @@ async def lilypond_generation(melody, name, uppertime, lowertime):
 
     # Generate PNG image and MIDI file
     proc = await asyncio.create_subprocess_exec(
-        'lilypond', '-dpreview', '-dbackend=eps', '--png', '-dresolution=300', f'--output=temp/score_{name}', f'temp/score_{name}.ly'
+        'lilypond', '-dpreview', '-dbackend=eps', '--png', '-dresolution=300', f'--output=static/cropped_score_{name}', f'temp/score_{name}.ly'
     )
     await proc.wait()
-
-    with Image.open(f'temp/score_{name}.png') as img:
-        width, height = img.size
-        crop_height = height
-        upper = 0
-        lower = 300
-        crop_rectangle = (0, upper, width, lower)
-        cropped_img = img.crop(crop_rectangle)
-
-        os.makedirs('static', exist_ok=True)
-        cropped_img.save(f'static/cropped_score_{name}.png')
 
     return f'static/cropped_score_{name}.png'
 
