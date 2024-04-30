@@ -5,7 +5,7 @@ import os
 from score_gen import format_melody
 async def lilypond_generation(melody, name, uppertime, lowertime):
     lilypond_score = f"""
-\\version "2.24.3"  
+\\version "2.22.0"  
 \\header {{
   tagline = "" \\language "english"
 }}
